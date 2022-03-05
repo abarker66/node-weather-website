@@ -11,7 +11,7 @@ const forecast = (lat, long, callback) => {
           callback('Error on response from weather stack!!' + JSON.stringify(body.error), undefined)
        } else {
           const data = body
-          callback(undefined, 'The current weather in ' + body.location.name + ' is ' + body.current.weather_descriptions[0] + ' and ' + body.current.temperature + ' Deg C, feels like ' + body.current.feelslike + ' Deg C.')
+          callback(undefined, 'The current weather in ' + body.location.name + ' is ' + body.current.weather_descriptions[0] + ' and ' + body.current.temperature + ' Deg C, feels like ' + body.current.feelslike + ' Deg C.' + ' Wind Speed is ' + body.current.wind_speed + ' (kph)  from ' + body.current.wind_degree + ' degrees.')
        }
     })
  
